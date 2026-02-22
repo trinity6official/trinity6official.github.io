@@ -12,22 +12,36 @@
             color: #e0e6f0;
             min-height: 100vh;
         }
+        /* --- Optimized Navbar & Logo --- */
         nav {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 40px;
+            padding: 12px 40px; /* Slimmer padding for a professional feel */
             border-bottom: 1px solid #1e2f42;
             position: sticky;
             top: 0;
             background: #0a0e1a;
-            z-index: 100;
+            z-index: 1000;
         }
-        .logo {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: #00d4ff;
-            letter-spacing: 2px;
+
+        .logo-link {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+
+        .logo-link img {
+            height: 42px; /* Controlled height for a professional look */
+            width: auto;
+            display: block;
+            /* This creates a subtle 'cyber' glow around the logo */
+            filter: drop-shadow(0 0 5px rgba(0, 212, 255, 0.4));
+            transition: transform 0.3s ease;
+        }
+
+        .logo-link img:hover {
+            transform: scale(1.05); /* Slight pop when you hover */
         }
         .nav-links a {
             color: #7a8fa6;
@@ -265,10 +279,9 @@
 <body>
 
 <nav>
-    <div class="logo">
-    <img src="logo.png" alt="Trinity6" 
-    style="height:50px; width:auto;">
-    </div>
+    <a href="#" class="logo-link">
+        <img src="logo.png" alt="Trinity6 Logo">
+    </a>
     <div class="nav-links">
         <a href="#services">Services</a>
         <a href="#how">How It Works</a>
